@@ -11,33 +11,31 @@ namespace Homework_number_15
     {
         static void Main(string[] args)
         {
-            const int MaximumNumberOfPasswordErrors = 3;
-            bool isExit = false;
+            const int MaxTryCount = 3;
             string inputUserPassword;
             string password = "123";
             string message = "Привет!";
-            int numberOfPasswordErrors = 0;
 
-            while (isExit == false)
+            for (int i = 0; i < MaxTryCount;)
             {
                 Console.WriteLine("Для просмотра сообщения ведите пароль");
                 inputUserPassword = Console.ReadLine();
 
-                if (password == inputUserPassword && numberOfPasswordErrors < MaximumNumberOfPasswordErrors)
+                if (password == inputUserPassword && i < MaxTryCount)
                 {
                     Console.WriteLine(message);
-                    numberOfPasswordErrors = 0;
+                    i = 0;
                 }
                 else if (password != inputUserPassword)
                 {
                     Console.WriteLine("Вы указали не верный пароль попробуйте ещё раз ");
-                    numberOfPasswordErrors++;
+                    i++;
                 }
 
-                if (numberOfPasswordErrors == MaximumNumberOfPasswordErrors)
+                if (i == MaxTryCount)
                 {
                     Console.WriteLine("Вы превысили лимит вода паролей ");
-                    isExit = true;
+                    i++;
                 }
             }
         }
