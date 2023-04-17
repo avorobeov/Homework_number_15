@@ -16,7 +16,7 @@ namespace Homework_number_15
             string password = "123";
             string message = "Привет!";
 
-            for (int i = 0; i < MaxTryCount;)
+            for (int i = 0; i < MaxTryCount; i++)
             {
                 Console.WriteLine("Для просмотра сообщения ведите пароль");
                 inputUserPassword = Console.ReadLine();
@@ -24,13 +24,12 @@ namespace Homework_number_15
                 if (password == inputUserPassword)
                 {
                     Console.WriteLine(message);
-                    i = 0;
+                    break;
                 }
-                
+
                 if (password != inputUserPassword)
                 {
                     Console.WriteLine("Вы указали не верный пароль попробуйте ещё раз ");
-                    i++;
                 }
             }
         }
