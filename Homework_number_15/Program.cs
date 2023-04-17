@@ -21,20 +21,15 @@ namespace Homework_number_15
                 Console.WriteLine("Для просмотра сообщения ведите пароль");
                 inputUserPassword = Console.ReadLine();
 
-                if (password == inputUserPassword && i < MaxTryCount)
+                if (password == inputUserPassword)
                 {
                     Console.WriteLine(message);
                     i = 0;
                 }
-                else if (password != inputUserPassword)
+                
+                if (password != inputUserPassword)
                 {
                     Console.WriteLine("Вы указали не верный пароль попробуйте ещё раз ");
-                    i++;
-                }
-
-                if (i == MaxTryCount)
-                {
-                    Console.WriteLine("Вы превысили лимит вода паролей ");
                     i++;
                 }
             }
